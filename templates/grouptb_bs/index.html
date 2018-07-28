@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GroupTB</title>
+        {% load staticfiles %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://cdn.bootcss.com/bootstrap-table/1.7.0/bootstrap-table.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/common.css' %}"/>
+        <!--[if lt IE 9]>
+            <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <ol class="breadcrumb">
+                        <li>
+                            <span class="glyphicon glyphicon-home"  aria-hidden="true"></span>
+                            省级列表
+                        </li>
+                    </ol>
+                    <div id="toolbar" class="btn-group">
+                        <button type="button" class="btn btn-default" id="btn-add">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-default" id="btn-heart">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </button>
+                        <button type="button" class="btn btn-default" id="btn-refresh">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </button>
+                    </div>
+                    <table id="table"></table>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+        <script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Table -->
+        <script src="http://cdn.bootcss.com/bootstrap-table/1.7.0/bootstrap-table.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap-table/1.7.0/locale/bootstrap-table-zh-CN.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+        <script src="{% static 'js/grouptb.js' %}"></script>
+    </body>
+</html>

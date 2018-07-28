@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>upyun的空间使用量</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap-table/1.8.1/bootstrap-table.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/jstree/3.1.1/themes/default/style.min.css" rel="stylesheet">
+    <link href="{% static 'css/upyun.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UpYun</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <!--<form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+            </form>-->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active" data-menuitem="全网空间使用量" id="nav-menuitem-1"><a href="#">Overview</a></li>
+          </ul>
+		  <ul class="nav nav-sidebar">
+            <li id="nav-menuitem-3" data-menuitem="Daily Usage"><a href="#">Daily Usage</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li id="nav-menuitem-2" data-menuitem="趋势"><a href="#">Trending</a></li>
+            <li><a href="#"><div id="myTree"></div></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+          <h1 class="page-header" id="page-header">全网空间使用量</h2>
+		  <div id="page-content">
+			  <div id="nav-menuitem-1-content">
+			  	<div class="table-responsive">
+					
+					<table id="myTable"></table></div>
+			  </div>
+			  <div id="nav-menuitem-2-content" style="display:none;" class="row"></div>
+			  <div id="nav-menuitem-3-content" style="display:none;" class="table_responsive">
+				  <p class="text-primary">最近更新日期：<span id="last-update-at"></span></p>
+			  	<table id="usage-table"></table>
+			  </div>
+		</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap-table/1.8.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+    <script src="http://cdn.bootcss.com/jstree/3.1.1/jstree.min.js"></script>
+    <script src="http://cdn.bootcss.com/dygraph/1.2/dygraph-combined.min.js"></script>
+    <script src="{% static 'js/upyun.js' %}"></script>
+  </body>
+</html>

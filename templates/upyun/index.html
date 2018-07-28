@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>upyun的空间使用量</title>
+        <link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/static/bootstrap/css/bootstrap-responsive.min.css"/>
+        <style type="text/css">
+            .nav .active a {background-color: #08c !important;color: #FFF !important;}
+            #myModal {width: 130px;height: 130px;top:50%;margin-top:-65px;margin-left:-65px;border:0;background: transparent;--webkit-box-shadow: none;box-shadow: none;}
+            .loading {width:100px;height:100px;background: url(/static/images/loading.gif) no-repeat center center;}
+            .mark>a {background-color: #5BC0DE !important;color: #FFF;}
+            .mark.active a{background-color: #5BC0DE !important;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- tools -->
+            <div class="row" style="margin-top:10px;">
+                <div class="span10">
+                    <div class="control-group form-horizontal">
+                        <label style="width:105px;text-align:left;" class="control-label" for="usage-unit">日标准使用量：</label>
+                        <div class="controls input-append" style="margin-left:20px;">
+                            <input type="text" id="usage-unit"/>
+                            <span class="add-on">GB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span2">
+                    <button class="btn btn-success" id="refresh">
+                        <i class="icon-refresh icon-white"></i> 刷新
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span3">
+                    <ul class="nav nav-tabs nav-stacked" id="navbar">
+                        <li class="active mark" group=""><a href="#">总使用量</a></li>
+                    </ul>
+                </div>
+                <div class="span9" id="group-panel-container">
+                    <div id="group-all" class="group-panel group-active">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>空间使用量（GB）</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="pagination">
+                            <ul>
+                                <li data-role="prev"><a href="javascript:void(0);">&laquo;</a></li>
+                                <li data-role="next"><a href="javascript:void(0);">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal hide" data-backdrop="static">
+            <div class="modal-body loading">
+                
+            </div>
+        </div>
+        <script type="text/template" id="group-template">
+            <div class="group-panel group-active">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>空间使用量（GB）</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li data-role="prev"><a href="javascript:void(0);">&laquo;</a></li>
+                        <li data-role="next"><a href="javascript:void(0);">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </script>
+        <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/static/js/index.js"></script>
+    </body>
+</html>
